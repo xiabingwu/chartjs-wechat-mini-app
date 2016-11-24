@@ -1,0 +1,3 @@
+<view class="chart-iframe">
+    <canvas style="width:{{myCanvasStyle.width}}px; height: {{myCanvasStyle.height}}px;"  bindtouchstart="myCanvasTouchStart" canvas-id="myCanvas"></canvas>
+</view>
