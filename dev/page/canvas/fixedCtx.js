@@ -31,7 +31,6 @@ export default function(ctx,canvasConfig){
     }
     ctx.measureTextToolTip=function(str){
         var lg=(''+str).realLength()
-        console.log('real',lg)
         return {
             width:lg*5.95
         }
@@ -46,11 +45,15 @@ export default function(ctx,canvasConfig){
         display: 'block'
     }
     ctx.strokeRect = function (x, y, width, height) {
+        ctx.beginPath()
         ctx.rect(x, y, width, height)
+        ctx.closePath()
         ctx.stroke()
     }
     ctx.fillRect = function (x, y, width, height) {
+        ctx.beginPath()
         ctx.rect(x, y, width, height)
+        ctx.closePath()
         ctx.fill()
     }
     ctx.canvas.getAttribute = function (name) {

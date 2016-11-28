@@ -1,6 +1,6 @@
 {
   "pages": [
-    "page/radar-skip-points/index"
+    "page/point-styles/index"
   ],
   "window": {
     "navigationBarTextStyle": "black",
