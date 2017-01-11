@@ -1,8 +1,11 @@
 ###使用说明
+- 安装 `npm install`
+- `gulp build ` 生成/Chart.js-master/dist/Chart.min.js文件
 - 使用压缩合并版本
 	- 打开 dev/page/canvas/chart.js 
 	- 注释 `import Chart from '../../Chart.js-master/src/chart'`
 	- 开启 `import Chart from '../../Chart.js-master/dist/Chart.min'`
+
 ### 适配案例
 - bar
 
