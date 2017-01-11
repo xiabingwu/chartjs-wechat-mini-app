@@ -33,6 +33,7 @@ export default function(canvasConfig,labels,data){
             },
             tooltips: {
                 displayColors:false,//不显示小方框
+                mode:'x',
                 callbacks: {
                     title:function(tooltipItem){
                         //return tooltipItem[0].xLabel+':'+tooltipItem[0].yLabel;

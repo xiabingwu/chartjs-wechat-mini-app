@@ -31,6 +31,7 @@ export default function(config){
         switch(eventName){
             case 'touchstart':
                 pageThis[canvasId+'TouchStart']=method
+                pageThis[canvasId+'TouchMove']=method
                 pageThis[canvasId+'TouchEnd']=function(){}
                 break;
         }
