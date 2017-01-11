@@ -3,10 +3,13 @@
  */
 import Chart from './chart'
 import fixedCtx from './fixedCtx'
+let app = getApp()
 export default function(config){
     let canvasId=config.canvasConfig.id
     let pageThis=this
-    let ctx = wx.createContext()
+    let ctx = wx.createCanvasContext(canvasId)//wx.createContext已经被废弃
+    let gid = app.getGid()
+    ctx.gid = gid
     resetCanvas(pageThis,config.canvasConfig)
     fixedCtx(ctx,config.canvasConfig)
     Chart.pluginService.register({
@@ -15,30 +18,25 @@ export default function(config){
         },
         afterDraw: function (chart, easing) {
             var ctx = chart.chart.ctx
-            if(ctx.canvas.id==canvasId){
-                wx.drawCanvas({
-                    canvasId: canvasId,
-                    actions: ctx.getActions()// 获取绘图动作数组
-                })
-                //console.log('canvasid',canvasId)
+            if(ctx.gid==gid){
+                // wx.drawCanvas({//wx.drawCanvas与ctx.getActions已经被废弃
+                //     canvasId: canvasId,
+                //     actions: ctx.getActions()// 获取绘图动作数组
+                // })
+                ctx.draw()
             }
-
         }
     });
     Chart.helpers.addEvent=function(canvas,eventName,method){
         switch(eventName){
-            case 'touchmove':
-                console.log(eventName)
-                pageThis[canvasId+'TouchMove']=method
-                break;
             case 'touchstart':
-
                 pageThis[canvasId+'TouchStart']=method
+                pageThis[canvasId+'TouchEnd']=function(){}
                 break;
         }
     }
     Chart.helpers.getRelativePosition = function(evt, chart) {
-        var touches=evt.touches[0]
+        var touches=evt.changedTouches[0]
         var x=touches.x
         var y=touches.y
         console.log(x,y)

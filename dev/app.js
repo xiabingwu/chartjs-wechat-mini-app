@@ -24,5 +24,12 @@ App({
       })
       return promise
     }
-  }
+  },
+  getGid:(function(){//全局唯一id
+    let id=0
+    return function(){
+      id++
+      return id
+    }
+  })()
 })

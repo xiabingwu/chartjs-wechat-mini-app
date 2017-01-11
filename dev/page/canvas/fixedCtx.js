@@ -44,18 +44,19 @@ export default function(ctx,canvasConfig){
         height: ctx.canvas.height,
         display: 'block'
     }
-    ctx.strokeRect = function (x, y, width, height) {
-        ctx.beginPath()
-        ctx.rect(x, y, width, height)
-        ctx.closePath()
-        ctx.stroke()
-    }
-    ctx.fillRect = function (x, y, width, height) {
-        ctx.beginPath()
-        ctx.rect(x, y, width, height)
-        ctx.closePath()
-        ctx.fill()
-    }
+    //strokeRect和fillRect方法已经被小程序实现不用封装了
+    // ctx.strokeRect = function (x, y, width, height) {
+    //     ctx.beginPath()
+    //     ctx.rect(x, y, width, height)
+    //     ctx.closePath()
+    //     ctx.stroke()
+    // }
+    // ctx.fillRect = function (x, y, width, height) {
+    //     ctx.beginPath()
+    //     ctx.rect(x, y, width, height)
+    //     ctx.closePath()
+    //     ctx.fill()
+    // }
     ctx.canvas.getAttribute = function (name) {
         if (name == 'width') {
             return ctx.canvas.width

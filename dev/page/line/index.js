@@ -6,6 +6,9 @@ var app = getApp()
 Page({
     data: {},
     onLoad: function () {
+
+    },
+    onShow: function () {
         let pageThis=this
         app.deviceInfo.then(function(deviceInfo){
             console.log('设备信息',deviceInfo)
@@ -23,8 +26,5 @@ Page({
             chartWrap.bind(pageThis)(config)
 
         })
-    },
-    onShow: function () {
-        //渲染逻辑不要写这里，后台切换到前端会被重新执行
     }
 })

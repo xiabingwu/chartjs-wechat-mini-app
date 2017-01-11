@@ -1,6 +1,6 @@
 {
   "pages": [
-    "page/point-styles/index"
+    "page/line/index"
   ],
   "window": {
     "navigationBarTextStyle": "black",

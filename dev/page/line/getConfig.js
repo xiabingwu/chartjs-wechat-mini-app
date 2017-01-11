@@ -11,6 +11,7 @@ export default function(canvasConfig,labels,data){
                 backgroundColor: "rgba(191, 243, 255, 0.498039)",
                 borderColor: "rgb(109, 209, 255)",
                 pointBackgroundColor:'#ffffff',
+                pointHitRadius: 10,
                 borderWidth: 2,
                 data: data
             }]
