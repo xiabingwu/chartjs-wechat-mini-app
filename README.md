@@ -6,6 +6,9 @@
 	- 注释 `import Chart from '../../Chart.js-master/src/chart'`
 	- 开启 `import Chart from '../../Chart.js-master/dist/Chart.min'`
 
+- IDE效果
+
+	![](https://raw.githubusercontent.com/xiabingwu/chartjs-wechat-mini-app/master/assets/demo.gif)
 ### 适配案例
 - bar
 
